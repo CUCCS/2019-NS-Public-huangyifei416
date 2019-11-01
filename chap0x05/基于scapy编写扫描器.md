@@ -55,6 +55,7 @@
    2. 在kali1中开始抓包后，在kali2中运行TCP_connect_scan.py文件
    ![ ](images/connect/connect_close抓包.png)
    ![ ](images/connect/close运行py文件.png)
+
    可以看到此时输出结果为closed
 
     3. 用wireshark打开刚才的抓包文件，可以看到kali2给kali1的80端口发送了含有SYN标志的TCP包，kali1主机给kali2主机发送了含有RST标志的包，端口处于关闭状态。
@@ -65,6 +66,7 @@
    2. 在kali1中开始抓包后，在kali2中运行TCP_connect_scan.py文件
    ![ ](images/connect/open抓包.png)
    ![ ](images/connect/open运行py文件.png)
+
    可以看到此时输出结果为open
 
     3. 用wireshark打开刚才的抓包文件，可以看到kali2给kali1发送了含有SYN标志的数据包，然后kali1给kali2发送了含有SYN标志的数据包，然后kali2给kali1发送了一个含有RST标志的数据包，和一个含有RST和ACK标志的数据包，他们完成了三次握手连接，且端口处于开启状态。
@@ -75,6 +77,7 @@
    2. 在kali1中开始抓包后，在kali2中运行TCP_connect_scan.py文件
    ![ ](images/connect/filter抓包.png)
    ![ ](images/connect/filter运行py文件.png)
+
    可以看到此时输出结果为filtered
 
     3. 用wireshark打开刚才的抓包文件,发现kali2主机给kali1主机的80端口发送了含有SYN的TCP包，但是kali1主机没有回复。端口处于过滤状态。
@@ -108,6 +111,7 @@
    ![ ](images/stealth/设置端口为过滤.png)
    2. 在kali1中开始抓包后，在kali2中运行TCP_stealth_scan.py文件
    ![ ](images/stealth/监听和抓包_filter.png)
+
    可以看到此时输出结果为filtered
 
     3. 用wireshark打开刚才的抓包文件,发现kali2主机给kali1主机的80端口发送了含有SYN的TCP包，但是kali1主机没有回复，端口处于过滤状态。
@@ -132,6 +136,7 @@
    ![ ](images/xmas/设置80端口为过滤状态.png)
    2. 在kali1中开始抓包后，在kali2中运行TCP_xmas_scan.py文件
    ![ ](images/xmas/监听和抓包_filter.png)
+
    可以看到此时输出结果为filtered
 
     3. 用wireshark打开刚才的抓包文件,发现kali2主机给kali1主机的80端口发送了含有FIN、PSH、URG标志的TCP包，但是kali1主机没有回复。端口处于过滤状态。
@@ -156,6 +161,7 @@
    ![ ](images/fin/设置端口为过滤.png)
    2. 在kali1中开始抓包后，在kali2中运行TCP_fin_scan.py文件
    ![ ](images/fin/监听和抓包_filter.png)
+
    可以看到此时输出结果为filtered
 
     3. 用wireshark打开刚才的抓包文件,发现kali2主机给kali1主机的80端口发送了含有FIN的TCP包，但是kali1主机没有回复。端口处于过滤状态。
@@ -179,6 +185,7 @@
    ![ ](images/null/设置端口为过滤.png)
    2. 在kali1中开始抓包后，在kali2中运行TCP_null_scan.py文件
    ![ ](images/null/监听和抓包_filter.png)
+
    可以看到此时输出结果为filtered
 
     3. 用wireshark打开刚才的抓包文件,发现kali2主机给kali1主机的80端口发送了没有任何标志位的TCP包，但是kali1主机没有回复。端口处于过滤状态。
@@ -198,7 +205,8 @@
     3. 用wireshark打开刚才的抓包文件，可以看到kali2给kali1的80端口发送了UDP包，kali1没有给出任何回复，端口处于关闭状态。
      ![ ](images/UDP/wireshark_close.png)
 * 端口开启状态的测试
-   1. 开启80端口
+   1. 开启80端口   
+   
    ![ ](images/UDP/打开80端口.png)
    2. 在kali1中开始抓包后，在kali2中运行UDP_scan.py文件
    ![ ](images/UDP/监听和抓包_open.png)
